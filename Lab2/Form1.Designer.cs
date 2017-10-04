@@ -35,7 +35,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.openFileDialogOrigin = new System.Windows.Forms.OpenFileDialog();
             this.buttonGetOrigin = new System.Windows.Forms.Button();
-            //this.buttonChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalette)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrigin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -61,7 +60,7 @@
             this.buttonGetPalette.TabIndex = 1;
             this.buttonGetPalette.Text = "Open the file *.bmp for picture-palette";
             this.buttonGetPalette.UseVisualStyleBackColor = true;
-            this.buttonGetPalette.Click += new System.EventHandler(this.buttonGetPicture_Click);
+            this.buttonGetPalette.Click += new System.EventHandler(this.buttonGetPalette_Click);
             // 
             // pictureBoxOrigin
             // 
@@ -71,10 +70,6 @@
             this.pictureBoxOrigin.TabIndex = 2;
             this.pictureBoxOrigin.TabStop = false;
             this.pictureBoxOrigin.Click += new System.EventHandler(this.pictureBox1_Click);
-            //
-            //
-            //
-            
             // 
             // pictureBox2
             // 
@@ -102,8 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 530);
-            this.Controls.Add(this.buttonChange);
+            this.ClientSize = new System.Drawing.Size(1140, 569);
             this.Controls.Add(this.buttonGetOrigin);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBoxOrigin);

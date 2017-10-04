@@ -12,14 +12,17 @@ namespace Lab2
 {
     public partial class PictureEditorForm : Form
     {
+        string ColorChannel = "";
+        ComboBox comboBoxPalette;
         public PictureEditorForm()
         {
             InitializeComponent();
             openFileDialogPalette.Filter = "BMP files(*.bmp)|*.bmp|All files(*.*)|*.*";
             openFileDialogOrigin.Filter = "BMP files(*.bmp)|*.bmp|All files(*.*)|*.*";
+            comboBoxPalette = new ComboBox();
         }
 
-        private void buttonGetPicture_Click(object sender, EventArgs e)
+        private void buttonGetPalette_Click(object sender, EventArgs e)
         {
             if (openFileDialogPalette.ShowDialog() == DialogResult.Cancel)
             {
@@ -29,6 +32,17 @@ namespace Lab2
             string filename = openFileDialogPalette.FileName;
             pictureBoxPalette.Image = Image.FromFile(filename);
             pictureBoxPalette.SizeMode=PictureBoxSizeMode.StretchImage;
+
+            comboBoxPalette.FormattingEnabled = true;
+            comboBoxPalette.Items.AddRange
+            (new object[]  {"LMS","RGB","YIQ","HSL","HSV"});
+            comboBoxPalette.Location = new System.Drawing.Point(12, 515);
+            comboBoxPalette.Name = "comboBoxPalette";
+            comboBoxPalette.Size = new System.Drawing.Size(362, 21);
+            comboBoxPalette.TabIndex = 5;
+            comboBoxPalette.Text = "Get the Diagram";
+            comboBoxPalette.SelectedIndexChanged += new System.EventHandler(this.comboBoxPalette_SelectedIndexChanged);
+            this.Controls.Add(comboBoxPalette);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -80,6 +94,13 @@ namespace Lab2
         {
             this.Controls.Remove(labelSum);
             this.Controls.Remove(buttonChange);
+        }
+
+        private void comboBoxPalette_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ColorChannel = comboBoxPalette.SelectedItem.ToString();
+            FormHistogram newForm = new FormHistogram(this);
+            newForm.Show();
         }
     }
 }
