@@ -28,25 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            //System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartColor = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartColor)).BeginInit();
             this.SuspendLayout();
             // 
             // chartColor
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartColor.ChartAreas.Add(chartArea1);
+            //chartArea1.Name = "ChartArea1";
+            //this.chartColor.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartColor.Legends.Add(legend1);
             this.chartColor.Location = new System.Drawing.Point(33, 31);
             this.chartColor.Name = "chartColor";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartColor.Series.Add(series1);
             this.chartColor.Size = new System.Drawing.Size(556, 386);
             this.chartColor.TabIndex = 0;
             this.chartColor.Text = "chartColor";
@@ -55,6 +50,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(613, 449);
             this.Controls.Add(this.chartColor);
             this.Name = "FormHistogram";
